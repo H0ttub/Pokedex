@@ -6,6 +6,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 import { SidenavService } from './sidenav/sidenav.service';
 
@@ -13,12 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { PokedexEntryComponent } from './pokedex-entry/pokedex-entry.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    PokedexEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     SidenavService
