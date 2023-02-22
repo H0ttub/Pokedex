@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { PokedexEntryComponent } from './pokedex-entry/pokedex-entry.component';
+import { FetchdataComponent } from './fetchdata/fetchdata.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PokedexEntryComponent } from './pokedex-entry/pokedex-entry.component';
     AppComponent,
     MainContentComponent,
     SidenavComponent,
-    PokedexEntryComponent
+    PokedexEntryComponent,
+    FetchdataComponent
   ],
   imports: [
     BrowserModule,
