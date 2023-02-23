@@ -1,6 +1,6 @@
-import { StartupMessage } from './../../../node_modules/piscina/src/common';
 import { error } from './../../../node_modules/ajv/lib/vocabularies/applicator/dependencies';
-import { Message } from './../../../node_modules/esbuild/lib/main.d';
+import { ErrorMessage } from './../../../node_modules/@angular/compiler-cli/ngcc/src/execution/cluster/api.d';
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError,Observable,tap,throwError } from 'rxjs';
@@ -29,14 +29,14 @@ export class FetchdataService
     }
     private handleError (err: HttpErrorResponse)
     {
-      let errorMessage= ' ';
-      if(err.error.instanceof ErrorEvent)
+      let errorMessage = '';
+      if(err.error instanceof ErrorEvent)
       {
         errorMessage = `an error occured: ${err.error.message}`;
       }
       else
       {
-        errorMessage = `Server returned code: ${err.status}, error message is ${err.message}`;
+       errorMessage =`server returned code: ${err.status}, error message is ${err.message}`;
       }
       console.error(errorMessage);
       return throwError(()=>errorMessage);
