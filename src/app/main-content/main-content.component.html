@@ -1,6 +1,17 @@
 <div style="text-align: center; padding: 2.5em 0px 2.5em;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon_logo" width="500px;"> <br> <br>
 
-  <button mat-raised-button color="primary" style="height: 3em; font-size: 20px;">Discover new pokemon</button>
+  <button mat-raised-button color="primary" style="height: 3em; font-size: 20px;" (click)="discover()">Discover new pokemon</button> <br><br> <!-- Vi bruger bare <br> til at skabe afstand -->
+
+  <div *ngIf="pokemon$ | async as pokemon; else result">
+    <app-discovered-pokemon [pokemon]="pokemon" (caught)="catchResult($event)"></app-discovered-pokemon>
+  </div>
+
+  <ng-template #result>
+    <ng-container *ngIf="!first">
+      <p *ngIf="caught">You got it!</p>
+      <p *ngIf="!caught">It fled!</p>
+    </ng-container>
+  </ng-template>
 </div>
 

@@ -9,7 +9,7 @@ import {IPokemon} from "./api";
 @Injectable()
 export class FetchdataService
 {
-    private url: string = "https://pokeapi.co/api/v2/pokemon/1";
+    private url: string = "https://pokeapi.co/api/v2/pokemon/";
     private header = new HttpHeaders();
 
     private _http;
@@ -19,10 +19,10 @@ export class FetchdataService
       this._http = http;
     }
 
-    getPokemons():Observable<IPokemon>
+    getPokemon(id:number):Observable<IPokemon>
     {
       this.header.append('Content-Type', 'application/json');
-      return this._http.get<IPokemon>(this.url,{headers:this.header}).pipe(
+      return this._http.get<IPokemon>(this.url + id.toString(),{headers:this.header}).pipe(
         tap(data => console.log(' all: ',JSON.stringify(data))),
         catchError(this.handleError)
       );
