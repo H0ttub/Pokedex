@@ -1,7 +1,11 @@
 <mat-card class="mat-card">
   <mat-card-header>
       <mat-card-title><p>#{{pokemons.id}}: {{pokemons.name}}</p></mat-card-title>
-      <mat-card-subtitle><p>{{pokemons.types[0].type.name}} | {{pokemons.types[1].type.name}}</p></mat-card-subtitle>
+      <mat-card-subtitle>
+        <span *ngFor="let type of pokemons.types; let indexOfelement=index;">{{type.type.name}}
+          <span *ngIf="pokemons!.types.length > 0 || indexOfelement != pokemons!.types.length"> | </span>
+        </span>
+      </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>Weight: {{pokemons.weight}} hg</p>
