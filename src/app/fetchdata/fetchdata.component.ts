@@ -7,6 +7,7 @@ import { FetchdataService } from './fetchdata.service';
 @Component({
 selector: 'fetchdata',
 templateUrl: './fetchdata.component.html',
+styleUrls: ['./fetchdata.component.scss'],
 providers: [FetchdataService]
 })
 

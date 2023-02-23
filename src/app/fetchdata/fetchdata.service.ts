@@ -1,5 +1,5 @@
-import { error } from './../../../node_modules/ajv/lib/vocabularies/applicator/dependencies';
-import { ErrorMessage } from './../../../node_modules/@angular/compiler-cli/ngcc/src/execution/cluster/api.d';
+//import { error } from './../../../node_modules/ajv/lib/vocabularies/applicator/dependencies';
+//import { ErrorMessage } from './../../../node_modules/@angular/compiler-cli/ngcc/src/execution/cluster/api.d';
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
@@ -16,7 +16,7 @@ export class FetchdataService
 
     constructor(http: HttpClient)
     {
-      this._http=http
+      this._http = http;
     }
 
     getPokemons():Observable<IPokemon>

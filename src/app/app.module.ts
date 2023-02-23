@@ -14,16 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { PokedexEntryComponent } from './pokedex-entry/pokedex-entry.component';
 import { FetchdataComponent } from './fetchdata/fetchdata.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContentComponent,
     SidenavComponent,
-    PokedexEntryComponent,
     FetchdataComponent
   ],
   imports: [
@@ -34,7 +32,8 @@ import { FetchdataComponent } from './fetchdata/fetchdata.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [
     SidenavService
