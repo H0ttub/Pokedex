@@ -9,7 +9,7 @@ import {IPokemon} from "./api";
 @Injectable()
 export class FetchdataService
 {
-    private url: string = "https://pokeapi.co/api/v2/pokemon/25";
+    private url: string = "https://pokeapi.co/api/v2/pokemon/1";
     private header = new HttpHeaders();
 
     private _http;
