@@ -7,6 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 import { SidenavService } from './sidenav/sidenav.service';
 
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DiscoveredPokemonComponent } from './discovered-pokemon/discovered-pokemon.component';
 import { FetchdataService } from './pokemon-list/fetchdata.service';
 import { PokedexService } from './pokemon-list/pokedex.service';
+import { BattleComponent } from './battle/battle.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PokedexService } from './pokemon-list/pokedex.service';
     MainContentComponent,
     SidenavComponent,
     PokemonListComponent,
-    DiscoveredPokemonComponent
+    DiscoveredPokemonComponent,
+    BattleComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { PokedexService } from './pokemon-list/pokedex.service';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [
     SidenavService,

@@ -1,0 +1,14 @@
+<div>
+  <mat-form-field appearance="fill">
+    <label>Choose Pokemon</label>
+    <mat-select [(value)]="pokemon">
+      <mat-option *ngFor="let pokemon of pokemons$ | async" [value]="pokemon">
+        {{pokemon.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <p *ngIf="pokemon">{{pokemon.id}}</p>
+  </div>
+</div>
