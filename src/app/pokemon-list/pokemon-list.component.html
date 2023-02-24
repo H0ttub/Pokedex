@@ -1,16 +1,25 @@
 <mat-card *ngFor="let pokemon of pokemons$ | async" class="mat-card">
   <mat-card-header>
+    <div mat-card-avatar style="background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png'); background-size: contain;"></div>
       <mat-card-title><p>#{{pokemon.id}}: {{pokemon.name}}</p></mat-card-title>
       <mat-card-subtitle>
+        <span>Types: </span>
         <span *ngFor="let type of pokemon.types; let indexOfelement=index;">{{type.type.name}}
           <span *ngIf="pokemon!.types.length > 1 && indexOfelement != pokemon!.types.length - 1"> | </span>
         </span>
       </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <table style="width: 100%;">
+      <tr>
+        <th>HP: {{pokemon.stats[0].base_stat}}</th>
+        <th>ATK: {{pokemon.stats[1].base_stat}}</th>
+        <th>DEF: {{pokemon.stats[2].base_stat}}</th>
+      </tr>
+    </table>
     <p>Weight: {{pokemon.weight / 10}} kg</p>
     <p>Height: {{pokemon.height / 10}} m</p>
+
+    <p><b>Caught in:</b> {{location[pokemon.location]}}</p>
   </mat-card-content>
-
-
 </mat-card>

@@ -1,7 +1,7 @@
 
 import { IPokemon } from './api';
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { PokedexService } from './pokedex.service'; 
+import { PokedexService } from './pokedex.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,6 +14,7 @@ export class PokemonListComponent implements OnInit, OnDestroy
 {
   pokemons$!: Observable<IPokemon[]>;
   error: string=" "
+  location: string[] =["Gentofte", "Theis' kælder","Herlev ghetto","Cuongs \"Farm\"","Ishøj","Lyngby","Herning","\"Herning\"","Løgum Kloster","Teodor Uden H"]
 
   constructor(private pokedexService:PokedexService){
     this.pokemons$ = pokedexService.pokedex$;
@@ -21,7 +22,7 @@ export class PokemonListComponent implements OnInit, OnDestroy
 
   ngOnInit(): void
   {
-  
+
   }
 
   ngOnDestroy(): void

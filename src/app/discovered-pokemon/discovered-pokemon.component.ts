@@ -17,7 +17,8 @@ export class DiscoveredPokemonComponent {
 
   catch(pokemon:IPokemon | undefined | null) {
     if (pokemon) {
-      const caught = Math.random() >= 2/3;
+      pokemon.location = Math.floor(Math.random() * 12)
+      const caught = Math.random() <= 2/3;
       if (caught) {
         this.pokedexService.addPokemon(pokemon)
       }

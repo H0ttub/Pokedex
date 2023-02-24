@@ -17,6 +17,7 @@ sprites: object;
 stats:any[];
 types: any[];
 weight:number;
+location:number;
 }
 
 
