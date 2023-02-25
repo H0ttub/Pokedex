@@ -9,10 +9,12 @@
 
   <ng-template #result>
     <ng-container *ngIf="!first">
-      <p *ngIf="caught">You got it!</p>
-      <p *ngIf="!caught">It fled!</p>
+      <h2 *ngIf="caught">You got it!</h2>
+      <h2 *ngIf="!caught">It fled!</h2>
     </ng-container>
   </ng-template>
 </div>
+
+<br><br>
 
 <app-battle></app-battle>

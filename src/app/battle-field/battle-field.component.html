@@ -1,0 +1,28 @@
+
+<ng-container *ngIf="played">
+    <div style="text-align: center;">
+        <h2 *ngIf="playerWin">You won!</h2>
+        <h2 *ngIf="!playerWin">You lost!</h2>
+    </div>
+</ng-container>
+
+
+<div *ngIf="pokemon && opponent" class="battle-container">
+    <div class="battle-images">
+        <div style="display: block;">
+            <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id.toString() + '.png'">
+            <mat-progress-bar color="warn" mode="determinate" [value]="healthPokemon"></mat-progress-bar>
+        </div>
+        <h1>VS</h1>
+        <div style="display: block;">
+            <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + opponent.id.toString() + '.png'">
+            <mat-progress-bar color="warn" mode="determinate" [value]="healthOpponent"></mat-progress-bar>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <button *ngIf="!fighting" mat-raised-button color="warn" style="height: 3em; font-size: 15px;" (click)="fight(pokemon, opponent)">
+        Battle
+        </button>
+    </div>
+</div>
+

@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { SidenavService } from './sidenav/sidenav.service';
 
@@ -21,6 +22,7 @@ import { DiscoveredPokemonComponent } from './discovered-pokemon/discovered-poke
 import { FetchdataService } from './pokemon-list/fetchdata.service';
 import { PokedexService } from './pokemon-list/pokedex.service';
 import { BattleComponent } from './battle/battle.component';
+import { BattleFieldComponent } from './battle-field/battle-field.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { BattleComponent } from './battle/battle.component';
     SidenavComponent,
     PokemonListComponent,
     DiscoveredPokemonComponent,
-    BattleComponent
+    BattleComponent,
+    BattleFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { BattleComponent } from './battle/battle.component';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule
   ],
   providers: [
     SidenavService,

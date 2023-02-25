@@ -1,0 +1,22 @@
+.battle-container {
+    background-color: rgb(212, 212, 212);
+    padding-bottom: 100px;
+
+    button {
+        margin: 16px 0px;
+    }
+}
+
+.battle-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin: 8px 16px;
+    }
+
+    mat-progress-bar {
+        margin: 8px 16px;
+    }
+}

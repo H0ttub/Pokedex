@@ -24,4 +24,13 @@ export class PokedexService {
             window.localStorage.setItem('pokedex', JSON.stringify(this.pokedex));
         }
     }
+
+    removePokemon(pokemon:IPokemon) {
+        const index = this.pokedex.findIndex((p) => p.id === pokemon.id);
+        if (index !== -1) {
+            this.pokedex.splice(index , 1)
+            this.subject.next(this.pokedex);
+            window.localStorage.setItem('pokedex', JSON.stringify(this.pokedex));
+        }
+    }
 }
